@@ -28,6 +28,18 @@ class CapsuleCRM::Party < CapsuleCRM::Base
     @history_items = CapsuleCRM::HistoryItem.init_many(self, data)
   end
 
+  #nodoc
+  
+  def tasks
+    return @tasks if @tasks
+    path = self.class.get_path
+    path = [path, '/', id, '/tasks'].join
+    last_response = self.class.get(path)
+    data = last_response['tasks'].try(:[], 'task')
+    @tasks = CapsuleCRM::Task.init_many(self, data)
+  end
+
+
   def tags
     return @tags if @tags
     path = self.class.get_path
