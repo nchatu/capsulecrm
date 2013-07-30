@@ -4,8 +4,8 @@ class CapsuleCRM::HistoryItem < CapsuleCRM::Child
   attr_accessor :entry_date
   attr_accessor :creator
   attr_accessor :creator_name
-  attr_accessor :note
   attr_accessor :subject
+  attr_accessor :note
   attr_accessor :attachments
   attr_accessor :participants
   attr_accessor :party_id
@@ -19,8 +19,8 @@ class CapsuleCRM::HistoryItem < CapsuleCRM::Child
       'entryDate' => 'entry_date',
       'creator' => 'creator',
       'creatorName' => 'creator_name',
-      'note' => 'note',
       'subject' => 'subject',
+      'note' => 'note',
       'attachments' => 'attachments',
       'participants' => 'participants',
       'partyId' => 'party_id',
